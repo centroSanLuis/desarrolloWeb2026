@@ -1,0 +1,42 @@
+/*
+* - todos los elementos
+
+nombre de la etiqueta(main/h2/h3) - todos los elementos que se llamen así
+
+.nombreclase - todos los elementos que tengan un atributo class y que el valor sea igual que el nombre de la clase
+
+#id - el elemento que tenga un atributo id que sea igual a el id
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 25px;
+}
+
+h2{
+    color:red;
+}
+
+.titular{
+    color: green;
+    text-decoration: underline;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+#menu{
+    color: blueviolet;
+}
+
+span{
+    display: inline-block;
+    width: 50%;
+    background-color: crimson;
+}
+
+ul#menu li a{
+    text-decoration: none;
+}
