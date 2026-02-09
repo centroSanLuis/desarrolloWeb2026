@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+header ul{
+    display: flex;
+    list-style: none;
+}
+
+header li{
+    padding: 5px;
+}
+
+.grid-servicios{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card{
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    margin: 5px;
+}
+
+.btn-main{
+    background-color: #38bdf8;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.btn-main:hover{
+    background-color: #164a60;
+
+}
+
+.hero-btn{
+    margin: 25px 0;
+}
