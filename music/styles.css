@@ -21,6 +21,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 90vh;
 }
 
 .menu-lateral{
@@ -51,13 +52,13 @@ body{
 
 .player{
     width: 100vw;
-    height: 90px;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 
-.controls,.volume svg{
+.controls svg,.volume svg{
     width: 16px;
 }
