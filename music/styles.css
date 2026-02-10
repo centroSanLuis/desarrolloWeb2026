@@ -1,0 +1,63 @@
+/* Reseteo de CSS */
+* {
+    margin:0; 
+    padding:0; 
+    box-sizing: border-box; 
+}
+
+/* Le cambiamos el tipo de letra */
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.sidebar{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-lateral{
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    flex-grow: 1;
+}
+
+.content .top-bar{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.album-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.album-grid .album-card{
+    width: 200px;
+    height: 250px;
+}
+
+.player{
+    width: 100vw;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.controls,.volume svg{
+    width: 16px;
+}
