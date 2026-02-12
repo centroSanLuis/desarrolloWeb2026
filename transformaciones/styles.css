@@ -1,0 +1,26 @@
+div{
+    height: 200px;
+    width: 200px;
+    background-color: blueviolet;
+    /*transform-origin: top left;*/
+    transition: transform 1s;
+    margin-bottom: 20px;
+}
+
+div.div1:hover{
+    transform: translate(-20px,-50px);
+}
+
+div.div2:hover{
+    transform: scale(0.5);
+}
+
+div.div3:hover{
+    /*transform-origin: top left;*/
+    transform: rotate(45deg);
+}
+
+div.div4:hover{
+    transform: skewY(20deg);
+}
+
