@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "lustria";
+    src: url("../fonts/Lustria/Lustria-Regular.ttf");
+}
+
+@font-face {
+    font-family: "mclaren";
+    src: url("../fonts/McLaren/McLaren-Regular.ttf");
+}
+
+@font-face {
+    font-family: niconne;
+    src: url(../fonts/Niconne/Niconne-Regular.ttf);
+}
+
+body{
+    background-color: #333;
+    font-family: lustria;
+    font-size: 14pt;
+}
+
+.container{
+    width: 1000px;
+    margin: 0 auto;
+    background-image: url(../images/siteBackground.jpg);
+    padding: 20px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .logo h1{
+    font-family: niconne;
+    font-size: 60pt;
+    color: #d34e26;
+}
+
+.header .logo p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14pt;
+}
+
+.header .socials{
+    display: flex;
+    align-items: center;
+}
+
+.header .socials ul{
+    display: flex;
+    list-style: none;
+}
+
+.socials ul li{
+    margin-left: 20px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    margin: 20px 0;
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.navbar ul li{
+    border-right: 1px solid #999;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.navbar ul li:last-child{
+    border-right: 0px;
+}
+
+.navbar a{
+    font-family: mclaren;
+    font-size: 18pt;
+    text-decoration: none;
+    color: #999
+}
+
+.navbar .active{
+    color:#d34e26;
+}
+
+.seassons{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.seassons .card{
+    text-align: center;
+    width: 200px;
+    background-color: #95959553;
+    
+}
+
+.seassons .card img{
+    width: 100%;
+    box-shadow: 0px 3px 5px #333;
+}
+
+.seassons .card p{
+    padding: 15px;
+}
+
+.seassons h2{
+    font-family: mclaren;
+    font-size: 14pt;
+    color: #d34e26;
+}
+
+.seassons .card button{
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 6px 15px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 5px #333;
+}
+
+.info{
+    margin-top: 20px;
+    display: flex;
+    gap: 40px;
+    background-color: #95959553;
+    padding: 25px;
+}
+
+.info .welcome-content, .info .gallery-content{
+    height: 300px;
+}
+
+.info h2{
+    font-family: mclaren;
+    font-size: 14pt;
+    color: #d34e26;
+    margin-bottom: 15px;
+}
+
+.info .images{
+    display: flex;
+    gap: 10px;
+    text-align: center;
+}
+
+.info .images .image{
+    width: 200px;
+}
+
+.images .image img{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.info .read-more{
+    color: #d34e26;
+    text-align: right;
+    padding: 20px;
+    border-top: 1px solid #999;
+    display: block;
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+}
+
+footer span{
+    color: #d34e26;
+    text-decoration: underline;
+}
