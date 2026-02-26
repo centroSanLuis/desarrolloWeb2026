@@ -1,0 +1,46 @@
+body{
+    width: 600px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main{
+    height: 100vh;
+    display: grid;
+    grid-template-areas:    'cabecera cabecera'
+                            'navegacion navegacion'
+                            'main sidebar'
+                            'footer footer';
+    grid-template-rows: 20% 10% auto 10%;
+    grid-template-columns: 80% auto;
+}
+
+div{
+    background-color: lightblue;
+    text-align: center;   
+}
+
+.cabecera{
+    grid-area: cabecera;
+    background-color: antiquewhite;
+}
+
+.navegacion{
+    grid-area: navegacion;
+    background-color: azure;
+}
+
+.main{
+    grid-area: main;
+    background-color: cadetblue;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: lightcoral;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: lightpink;
+}

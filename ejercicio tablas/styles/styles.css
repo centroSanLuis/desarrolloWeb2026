@@ -1,0 +1,153 @@
+:root{
+    --bg-color: #f4f7fe;
+    --text-main: #2b3674;
+
+    --bg-card: #fff;
+    --card-title: #a3aed0;
+
+    --border-color: #f1f1f1;
+    --status-delivered: #01b574;
+    --bg-delivered: #e6f7f0;
+    --status-cancelled: #ee5d50;
+    --bg-cancelled: #fdf2f2;
+    --status-shipped: #39b8ff;
+    --bg-shipped: #e6f5ff;
+    --status-processing: #ffb547;
+    --bg-processing: #fff8ed;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    padding: 30px;
+    color: var(--text-main);
+}
+
+main{
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.stats{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.stats .card{
+    background-color: var(--bg-card);
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    width: 350px;
+}
+
+.card h2{
+    color: var(--card-title);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+.card .card-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-content span{
+    display: block;
+}
+
+.card-content .value{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.card-content .title{
+    color: var(--card-title);
+    font-size: 10px;
+}
+
+.table{
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.table table{
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+}
+
+.table th{
+    text-align: left;
+    padding: 15px;
+    color: var(--card-title);
+    font-size: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table td{
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.product-img-cell{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-img-cell img{
+    width: 45px;
+    border-radius: 8px;
+}
+
+.user-img-cell{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-img-cell img{
+    width: 35px;
+    border-radius: 50%;
+}
+
+.status{
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.delivered{
+    background-color: var(--bg-delivered);
+    color: var(--status-delivered);
+}
+
+.shipped{
+    background-color: var(--bg-shipped);
+    color: var(--status-shipped);
+}
+
+.cancelled{
+    background-color: var(--bg-cancelled);
+    color: var(--status-cancelled);
+}
+
+.processing{
+    background-color: var(--bg-processing);
+    color: var(--status-processing);
+}
