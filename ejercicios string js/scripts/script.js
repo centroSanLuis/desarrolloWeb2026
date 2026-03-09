@@ -73,3 +73,121 @@ function palabraProhibida(cadena, palabraSustituir){
 }
 
 palabraProhibida('Javascript es malo', 'Javascript'); // Javascript es ****
+
+//ejercicio 5
+function capitalizar(frase){
+    let array = frase.split(' ');
+
+    let fraseCapitalizada = '';
+
+    for(let i=0; i<array.length; i++){
+        console.log(array[i]);
+        let palabra = array[i];
+
+        let primeraLetra = palabra.charAt(0);
+
+        let palabraCapitalizada = palabra.replace(primeraLetra, primeraLetra.toUpperCase());
+
+        console.log(palabraCapitalizada);
+
+        fraseCapitalizada = fraseCapitalizada + ' ' + palabraCapitalizada;
+    }
+
+    fraseCapitalizada = fraseCapitalizada.trim();
+
+    console.log(fraseCapitalizada);
+
+}
+
+capitalizar('hola mundo desde js');
+
+//Ejercicio 5 BIS
+function capitalizar2(frase){
+    let primeraLetra = frase.charAt(0);
+
+    frase = frase.replace(primeraLetra, primeraLetra.toUpperCase());
+
+    for(let i=0;i<frase.length;i++){
+        if(frase.charAt(i) == ' '){
+            //let letraCapitalizada = frase.charAt(i+1).toUpperCase();
+            let letra = frase.charAt(i+1);
+            let letraCapitalizada = letra.toUpperCase();
+
+            let principioFrase = frase.slice(0,i+1);
+            let finalFrase = frase.slice(i+2);
+
+            frase = principioFrase + letraCapitalizada + finalFrase;
+        }
+
+    }
+
+    console.log(frase);
+}
+
+capitalizar2('hola mundo desde js');
+
+//ejercicio 6
+
+function separarNombre(email){
+    let indiceArroba = email.indexOf('@');
+
+    let nombreUsuario = email.slice(0,indiceArroba);
+
+    console.log(nombreUsuario);
+}
+
+separarNombre('acortazar@centrosanluis.com');
+
+//ejercicio 7
+function contarVocales(frase){
+    let contador = 0;
+    for(let i=0;i<frase.length;i++){
+        let letra = frase.charAt(i);
+        if(letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u'){
+            contador++;
+        }
+    }
+
+    console.log(`el numero de vocales es ${contador}`);
+}
+
+contarVocales('animo chic@s que lo vais a conseguir');
+
+//ejercicio 8
+function analizarTexto(frase){
+    let array = frase.split(' ');
+
+    console.log(`La frase tiene ${array.length} palabras`);
+
+    let palabraMasLarga = '';
+    let contadorPalabras = 0;
+
+    for(let i=0;i<array.length;i++){
+        tamanoPalabra = array[i].length;
+        if(tamanoPalabra > contadorPalabras){
+            palabraMasLarga = array[i];
+            contadorPalabras = tamanoPalabra;
+        }
+    }
+
+    console.log(`La palabra mas larga es ${palabraMasLarga}`);
+
+    let contadorLetras = {};
+
+    for(let i=0;i<frase.length;i++){
+        let letra = frase.charAt(i);
+
+        if(letra != ' '){
+            if(contadorLetras[letra]){
+                contadorLetras[letra]++;
+            }else{
+                contadorLetras[letra] = 1;
+            }
+        }
+    }
+
+    console.log(contadorLetras);
+}
+
+analizarTexto('Cuantas veces aparece cada letra');
+
