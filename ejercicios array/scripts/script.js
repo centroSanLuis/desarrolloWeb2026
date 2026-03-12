@@ -112,3 +112,101 @@ arrayFrase.reverse();
 let fraseVuelta = arrayFrase.join(' ');
 
 console.log(fraseVuelta);
+
+//ejercicio 11
+let arrayNotas = [3, 8, 5, 2, 10, 7, 4];
+
+//funcion anonima
+arrayNotas.forEach(function(nota){
+    if(nota<5){
+        console.log(`Nota ${nota}: SUSPENDIDO`);
+    }else{
+        console.log(`Nota ${nota}: APROBADO`);
+    }
+});
+
+/*
+//arrow function
+arrayNotas.forEach((nota)=>{
+
+});
+
+//nombrando la funcion
+arrayNotas.forEach(comprobarNota);
+
+function comprobarNota(nota){
+
+}*/
+
+//ejercicio 12
+let arrayCometarios = ["Hola", "Gana dinero fácil", "Me gusta el post", "Cómpralo ya"];
+
+arrayCometarios.forEach(function(comentario){
+    let comentarioLimpio = comentario.toLowerCase();
+
+    comentarioLimpio = comentarioLimpio.replaceAll("á", "a");
+    comentarioLimpio = comentarioLimpio.replaceAll("é", "e");
+    comentarioLimpio = comentarioLimpio.replaceAll("í", "i");
+    comentarioLimpio = comentarioLimpio.replaceAll("ó", "o");
+    comentarioLimpio = comentarioLimpio.replaceAll("ú", "u");
+
+    if(comentarioLimpio.indexOf("compra") < 0 && comentarioLimpio.indexOf("dinero") < 0){
+        console.log(comentario);
+    }
+});
+
+//ejericio 13
+let arrayPrecios =  [45, 12, 89, 5, 24];
+let minimo = arrayPrecios[0];
+
+arrayPrecios.forEach(function(precio){
+
+    if(precio < minimo){
+        minimo = precio;
+    }
+
+});
+
+console.log(minimo);
+
+//ejercicio 14
+let arrayNombres2 = ["Alberto", "Pepe", "Federico" , "Ritxi", "David"];
+
+arrayNombres2.forEach(function(nombre){
+    if(nombre.toLowerCase().indexOf('a') >= 0){
+        console.log(`El nombre ${nombre} cumple con la condicion`);
+    }
+});
+
+//ejercicio 15
+let arrayNombresChungos = [" nico", " mArta ", "JUAN "];
+
+arrayNombresChungos.forEach(function(nombre){
+    console.log(nombre.toUpperCase().trim());
+});
+
+//ejericio 16
+let arrayNums1to10 = [1,2,3,4,5,6,7,8,9,10];
+let sumaPares = 0;
+
+arrayNums1to10.forEach(function(numero){
+    if(numero % 2 == 0){
+        sumaPares = sumaPares + numero;
+    }
+});
+
+console.log(sumaPares);
+
+//ejercicio 17
+let arrayProductos = ['llave inglesa', 'tornillo', 'destornillador'];
+arrayProductos.forEach(function(producto, i){
+    console.log(`Producto: ${producto} - ID: ${i+100}`);
+});
+
+
+
+
+
+
+
+
