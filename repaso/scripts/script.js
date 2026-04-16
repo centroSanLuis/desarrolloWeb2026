@@ -160,10 +160,130 @@ function cadenaAlReves(cadena){
 
 cadenaAlReves('hola');
 
-//Ejercicio11
+//ejercicio11
 document.getElementById('btnCalcularEdad').addEventListener('click', function(){
     let edad = document.getElementById('edad').value;
 
     document.getElementById('resultadoCalcularEdad').innerHTML = `La edad humana de tu perro es ${edad * 7}`;
-})
+});
+
+//ejercicio12
+document.getElementById('btnDollar').addEventListener('click', function(){
+    let euros = parseFloat(document.getElementById('euros').value);
+    let resultado = document.getElementById('resultadoEuroToDollar');
+
+    if(euros){
+        let dollars = euros * 1.15;
+        dollars = dollars.toFixed(2);
+
+        resultado.innerText = `${euros}€ son ${dollars}$`;
+    }else{
+        resultado.innerText = `Introduce un número válido!`;
+    }
+
+
+});
+
+//ejercicio13
+document.getElementById('mayorEdad').addEventListener('input', function(){
+    let divResultado = document.getElementById('mensajeEdad');
+
+    let edad = parseInt(this.value);
+
+    if(edad>=18){
+        divResultado.style.color = 'green';
+        divResultado.innerText = 'Bienvenido'; 
+    }else{
+        divResultado.style.color = 'red';
+        divResultado.innerText = 'Prohibido';
+    }
+});
+
+//ejercicio14
+let numero = 0;
+
+document.getElementById('btnEmpezarJuego').addEventListener('click', function(){
+    numero = Math.floor((Math.random()*10)+1);
+});
+
+document.getElementById('btnValidarNum').addEventListener('click', function(){
+    let numeroUsuario = parseInt(document.getElementById('numeroAdivinar').value);
+    let resultado = document.getElementById('resultadoAdivinaNum');
+
+    if(numeroUsuario && numero != 0){
+        if(numero == numeroUsuario){
+            resultado.innerHTML = 'Has acertado!!';
+        }else if(numero > numeroUsuario){
+            resultado.innerHTML = 'El numero secreto es MAYOR';
+        }else{
+            resultado.innerHTML = 'El numero secreto es MENOR';
+        }
+    }else{
+        resultado.innerHTML = 'Tienes que darle al botón de Empezar juego';
+    }
+});
+
+//ejercicio15
+document.getElementById('btnSumarValor').addEventListener('click', function(){
+    let resultado = document.getElementById('resultadoAcumulado');
+
+    let acumulado = parseInt(resultado.innerText);
+    let numero = parseInt(document.getElementById('numeroAcumulado').value);
+
+    if(numero){
+        resultado.innerText = acumulado + numero;
+    }
+});
+
+//ejercicio16
+let pokemones = ['https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/001.png', 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/002.png', 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/003.png', 'https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/004.png'];
+
+
+document.getElementById('btnCargarImagenes').addEventListener('click', function(){
+    let resultado = document.getElementById('contenedorImagenes');
+
+    pokemones.forEach(value => {
+        let img = document.createElement('img');
+
+        img.src = value;
+
+        resultado.appendChild(img);
+    });
+});
+
+//ejercicio17
+document.getElementById('btnAnadirProducto').addEventListener('click', function(){
+    let producto = document.getElementById('producto');
+    let lista = document.getElementById('listaProductos');
+
+    let li = document.createElement('li');
+    li.innerText = producto.value;
+    li.addEventListener('click', function(){
+        this.remove();
+    })
+
+    lista.appendChild(li);
+
+    producto.value = '';
+});
+
+//ejercicio18
+
+//ejercicio19
+let arrayNotas = [4,9,2,7,6];
+
+document.getElementById('btnComprobarAprobados').addEventListener('click', function(){
+    let aprobado = 0;
+    let suspendido = 0;
+
+    for(let i=0;i<arrayNotas.length;i++){
+        if(arrayNotas[i] >= 5){
+            aprobado++;
+        }else{
+            suspendido++;
+        }
+    }
+
+    document.getElementById('resultadoComprobacion').innerText = `El numero de aprobados es ${aprobado} y el de suspendidos es ${suspendido}`;
+});
 
