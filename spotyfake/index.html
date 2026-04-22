@@ -64,7 +64,7 @@
             <div class="now-playing">
                 <img src="https://i.scdn.co/image/ab67616d0000b27346869a8340d046f5c53b2781" id="current-cover">
                 <div class="info">
-                    <p id="current-title">Selecciona una canción</p>
+                    <p id="current-title" data-id-cancion="-1">Selecciona una canción</p>
                     <p id="current-artist">El Reno Renardo</p>
                 </div>
             </div>
@@ -83,8 +83,8 @@
             </div>
 
             <div class="volume-area">
-                <span>🔊</span>
-                <input type="range" id="volume-control" value="20">
+                <span id="emojiVolumen">🔊</span>
+                <input type="range" id="volume-control" min="0" max="100" value="50">
             </div>
         </footer>
     </div>
