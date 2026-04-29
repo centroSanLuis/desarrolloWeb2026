@@ -1,6 +1,7 @@
-document.getElementById("btnGuardar").addEventListener('click', (evt)=>{
+cargarDatosEnTabla();
 
-    evt.preventDefault();
+document.getElementById("btnGuardar").addEventListener('click', ()=>{
+
     const nombre = document.getElementById('nombre').value;
     const apellidos = document.getElementById('apellidos').value;
     const edad = document.getElementById('edad').value;
@@ -13,13 +14,55 @@ document.getElementById("btnGuardar").addEventListener('click', (evt)=>{
         equipo: equipo
     };
 
-    console.log(usuario);
+    const usuarios = localStorage.getItem("usuarios");
 
-    localStorage.setItem(nombre, JSON.stringify(usuario));
+    if(usuarios == null){
+        const arrayUsuarios = [];
 
-    user = localStorage.getItem(nombre);
+        arrayUsuarios.push(usuario);
 
-    console.log(JSON.parse(user));
+        localStorage.setItem("usuarios", JSON.stringify(arrayUsuarios));
+    }else{
+        const arrayUsuarios = JSON.parse(usuarios);
 
-    //return false;
+        arrayUsuarios.push(usuario);
+
+        localStorage.setItem("usuarios", JSON.stringify(arrayUsuarios));
+    }
+
+    cargarDatosEnTabla();
+
 });
+
+function cargarDatosEnTabla(){
+    const cuerpoTabla = document.querySelector("#tablaUsuarios tbody");
+
+    cuerpoTabla.innerHTML = '';
+
+    const usuariosGuardados = localStorage.getItem("usuarios");
+
+    if(usuariosGuardados != null){
+
+        arrayUsuarios = JSON.parse(usuariosGuardados);
+
+        arrayUsuarios.forEach(function(usuario){
+            const fila = document.createElement('tr');
+
+            fila.innerHTML = `
+                <td>${usuario.nombre}</td>
+                <td>${usuario.apellidos}</td>
+                <td>${usuario.edad}</td>
+                <td>${usuario.equipo}</td>
+            `;
+
+            cuerpoTabla.appendChild(fila);
+        });
+
+    }else{
+        const fila = document.createElement('tr');
+
+        fila.innerHTML = `<td colspan="4">No hay usuarios en la BD</td>` ;
+
+        cuerpoTabla.appendChild(fila);
+    }
+}
