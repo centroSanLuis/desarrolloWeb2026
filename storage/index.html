@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <form action="#" method="post">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre">
+
+        <label for="apellidos">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos">
+        
+        <label for="edad">Edad</label>
+        <input type="number" name="edad" id="edad">
+        
+        <label for="equipo">Equipo</label>
+        <select name="equipo" id="equipo">
+            <option value="0">Seleccione un equipo</option>
+            <option value="rojo">Rojo</option>
+            <option value="azul">Azul</option>
+        </select>
+
+        <button id="btnGuardar">Guardar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
