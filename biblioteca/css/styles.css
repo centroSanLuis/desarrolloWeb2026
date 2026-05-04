@@ -1,0 +1,7 @@
+form label{
+    display: block;
+}
+
+#btnEditar{
+    display: none;
+}
