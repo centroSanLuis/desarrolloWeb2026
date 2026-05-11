@@ -1,8 +1,8 @@
 package pajaritos;
 
-public class Canario extends Ave{
+public abstract class Canario extends Ave{
 	
-	public double tamano;
+	private double tamano;
 	
 	public Canario(char sexo, int edad) {
 		super(sexo, edad);
@@ -27,6 +27,14 @@ public class Canario extends Ave{
 				System.out.println("Mediano");
 			}
 		}
+	}
+
+	public double getTamano() {
+		return tamano;
+	}
+
+	public void setTamano(double tamano) {
+		this.tamano = tamano;
 	}
 
 }

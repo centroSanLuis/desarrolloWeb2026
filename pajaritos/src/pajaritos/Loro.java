@@ -4,8 +4,8 @@ import enums.Region;
 
 public class Loro extends Ave{
 	
-	public Region region;
-	public String color;
+	private Region region;
+	private String color;
 	
 	public Loro(char sexo, int edad, Region region, String color) {
 		super(sexo, edad);
@@ -33,5 +33,31 @@ public class Loro extends Ave{
 		}*/
 		
 	}
+	
+	@Override
+	public void cantar() {
+		System.out.println("Pio pio soy un lorito bonito");
+	}
+
+
+	public Region getRegion() {
+		return region;
+	}
+
+
+	public void setRegion(Region region) {
+		this.region = region;
+	}
+
+
+	public String getColor() {
+		return color;
+	}
+
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+	
 
 }

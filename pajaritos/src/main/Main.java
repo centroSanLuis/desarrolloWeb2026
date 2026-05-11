@@ -2,6 +2,7 @@ package main;
 
 import enums.Region;
 import pajaritos.Ave;
+import pajaritos.DatosPersonales;
 import pajaritos.Loro;
 import pajaritos.Piolin;
 
@@ -17,13 +18,29 @@ public class Main {
 		p.obtenerTamano();
 		loro.deDondeEres();
 		
-		p.tamano = 15.5;
+		p.setTamano(15.5);
 		p.obtenerTamano();
 		
-		loro.region = Region.S;
+		loro.setRegion(Region.S);
 		loro.deDondeEres();
 		
+		DatosPersonales datosLoro = new DatosPersonales("Lorito", "Alberto");
+		DatosPersonales datosPiolin = new DatosPersonales("Piolin", "Hugo");
+		
+		loro.setDatosPersonales(datosLoro);
+		p.setDatosPersonales(datosPiolin);
+		
 		System.out.println(Ave.numAves);
+		
+		Ave[] aves = new Ave[2];
+		
+		aves[0] = p;
+		aves[1] = loro;
+		
+		for(int i=0;i<aves.length;i++) {
+			aves[i].cantar();
+		}
+		
 		
 	}
 
