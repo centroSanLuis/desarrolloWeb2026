@@ -1,17 +1,37 @@
 package main;
 
-import juegos.*;
+import juegos.interfaces.Jugable;
+import juegos.numeros.JuegoAdivinaImpar;
+import juegos.numeros.JuegoAdivinaNumero;
+import juegos.numeros.JuegoAdivinaPar;
 
 import java.util.Scanner;
 
 public class Main {
 
-    static void main() {
-        Jugable juego = eligeJuego();
+    private static Scanner teclado = new Scanner(System.in);
 
-        juego.muestraNombre();
-        juego.muestraInfo();
-        juego.juega();
+    static void main() {
+        boolean seguirJugando = false;
+        do {
+            Jugable juego = eligeJuego();
+
+            juego.muestraNombre();
+            juego.muestraInfo();
+            juego.juega();
+
+            System.out.println("¿Quieres seguir jugando? (s/n)");
+            teclado.nextLine();
+            String respuesta = teclado.nextLine();
+
+            if(respuesta.equals("s")){
+                seguirJugando = true;
+            }else{
+                System.out.println("Gracias por jugar!");
+                seguirJugando = false;
+            }
+
+        }while(seguirJugando);
         /*
         //Crea una instancia de la clase Juego indicando que el número de vidas es 5.
         Juego juego = new Juego(5);
@@ -58,7 +78,7 @@ public class Main {
     }
 
     public static Jugable eligeJuego(){
-        Scanner teclado = new Scanner(System.in);
+
         JuegoAdivinaNumero jan = new JuegoAdivinaNumero(5,5);
         JuegoAdivinaPar jap = new JuegoAdivinaPar(5,6);
         JuegoAdivinaImpar jai = new JuegoAdivinaImpar(5,3);
