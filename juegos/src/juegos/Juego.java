@@ -38,6 +38,4 @@ public abstract class Juego {
             System.out.println("Has igualado el record");
         }
     }
-
-    public abstract void juega();
 }

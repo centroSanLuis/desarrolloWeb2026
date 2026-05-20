@@ -2,7 +2,7 @@ package juegos;
 
 import java.util.Scanner;
 
-public class JuegoAdivinaNumero extends Juego{
+public class JuegoAdivinaNumero extends Juego implements Jugable{
 
     private int numeroSecreto;
 
@@ -11,19 +11,28 @@ public class JuegoAdivinaNumero extends Juego{
         this.numeroSecreto = numeroSecreto;
     }
 
-    @Override
     public void juega() {
         reiniciarPartida();
 
-        System.out.println("Adivina un numero entre el 0 y el 10");
+        //System.out.println("Adivina un numero entre el 0 y el 10");
 
         Scanner teclado = new Scanner(System.in);
         boolean seguirJugando = true;
 
         //for, while 0...n; do...while 1...n
         do {
-            System.out.println("Introduce un numero:");
-            int numeroPosible = teclado.nextInt();
+
+            boolean esNumeroValido = false;
+            int numeroPosible = 0;
+
+            do {
+                System.out.println("Introduce un numero:");
+                numeroPosible = teclado.nextInt();
+
+                esNumeroValido = validaNumero(numeroPosible);
+            }while(!esNumeroValido);
+            //}while (esNumeroValido==false);
+
 
             if (numeroPosible == numeroSecreto) {
                 System.out.println("Acertaste!!");
@@ -42,6 +51,25 @@ public class JuegoAdivinaNumero extends Juego{
             }
         } while(seguirJugando);
 
-        teclado.close();
+        //teclado.close();
+    }
+
+    @Override
+    public void muestraNombre() {
+        System.out.println("Adivina numero");
+    }
+
+    @Override
+    public void muestraInfo() {
+        System.out.println("Encuentra el numero secreto entre el 0 y el 10");
+    }
+
+    public boolean validaNumero(int numero){
+        if(numero <= 10 && numero >= 0){
+            return true;
+        }else {
+            System.out.println("El numero introducido es incorrecto prueba con un numero del 0 al 10");
+            return false;
+        }
     }
 }

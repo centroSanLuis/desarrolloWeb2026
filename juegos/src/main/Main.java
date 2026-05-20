@@ -1,11 +1,17 @@
 package main;
 
-import juegos.Juego;
-import juegos.JuegoAdivinaNumero;
+import juegos.*;
+
+import java.util.Scanner;
 
 public class Main {
 
     static void main() {
+        Jugable juego = eligeJuego();
+
+        juego.muestraNombre();
+        juego.muestraInfo();
+        juego.juega();
         /*
         //Crea una instancia de la clase Juego indicando que el número de vidas es 5.
         Juego juego = new Juego(5);
@@ -31,9 +37,61 @@ public class Main {
         juego.actualizaRecord();
         juego2.actualizaRecord();
         */
-        JuegoAdivinaNumero j = new JuegoAdivinaNumero(5,5);
+        //JuegoAdivinaNumero j = new JuegoAdivinaNumero(5,5);
+        /*JuegoAdivinaNumero jan = new JuegoAdivinaNumero(5,5);
+        JuegoAdivinaPar jap = new JuegoAdivinaPar(5,6);
+        JuegoAdivinaImpar jai = new JuegoAdivinaImpar(5,3);
 
-        j.juega();
+        jan.muestraNombre();
+        jan.muestraInfo();
+        jan.juega();
+
+        jap.muestraNombre();
+        jap.muestraInfo();
+        jap.juega();
+
+        jai.muestraNombre();
+        jai.muestraInfo();
+        jai.juega();*/
+
+
+    }
+
+    public static Jugable eligeJuego(){
+        Scanner teclado = new Scanner(System.in);
+        JuegoAdivinaNumero jan = new JuegoAdivinaNumero(5,5);
+        JuegoAdivinaPar jap = new JuegoAdivinaPar(5,6);
+        JuegoAdivinaImpar jai = new JuegoAdivinaImpar(5,3);
+
+        Jugable[] juegos = new Jugable[3];
+        juegos[0] = jan;
+        juegos[1] = jap;
+        juegos[2] = jai;
+
+        boolean esJuegoCorrecto = false;
+        Jugable respuesta = null;
+
+        do {
+            System.out.println("Selecciona un Juego:");
+            for (int i = 0; i < juegos.length; i++) {
+                Jugable j = juegos[i];
+                System.out.print(i + " - ");
+                j.muestraNombre();
+            }
+
+            int juegoSeleccionado = teclado.nextInt();
+
+            if (juegoSeleccionado >= 0 && juegoSeleccionado < juegos.length) {
+                esJuegoCorrecto = true;
+                respuesta = juegos[juegoSeleccionado];
+            } else {
+                esJuegoCorrecto = false;
+                System.out.println("Selecciona un juego correcto!!");
+            }
+            //}while(esJuegoCorrecto == false);
+        }while(!esJuegoCorrecto);
+
+        return respuesta;
     }
 
 }
