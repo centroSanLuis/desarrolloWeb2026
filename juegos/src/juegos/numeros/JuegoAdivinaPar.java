@@ -2,8 +2,8 @@ package juegos.numeros;
 
 public class JuegoAdivinaPar extends JuegoAdivinaNumero{
 
-    public JuegoAdivinaPar(int numVidas, int numeroSecreto){
-        super(numVidas, numeroSecreto);
+    public JuegoAdivinaPar(int numVidas){
+        super(numVidas);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class JuegoAdivinaPar extends JuegoAdivinaNumero{
             if(numero%2 == 0){
                 return true;
             }else{
-                System.out.println("El numero introducido debe ser PAR");
+                //System.out.println("El numero introducido debe ser PAR");
                 return false;
             }
         }else{

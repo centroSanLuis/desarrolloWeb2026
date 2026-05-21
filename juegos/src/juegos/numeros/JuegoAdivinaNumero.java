@@ -3,17 +3,18 @@ package juegos.numeros;
 import juegos.Juego;
 import juegos.interfaces.Jugable;
 
+import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 
 public class JuegoAdivinaNumero extends Juego implements Jugable {
 
     private int numeroSecreto;
-    private Random random = new Random();
+    private Date fecha = new Date();
+    private Random random = new Random(fecha.getTime());
 
     public JuegoAdivinaNumero(int numVidas){
         super(numVidas);
-        this.numeroSecreto = numeroSecreto;
     }
 
     public void juega() {
@@ -35,6 +36,11 @@ public class JuegoAdivinaNumero extends Juego implements Jugable {
                 numeroPosible = teclado.nextInt();
 
                 esNumeroValido = validaNumero(numeroPosible);
+
+                if(!esNumeroValido){
+                    System.out.println("El numero que has introducido no es valido");
+                }
+
             }while(!esNumeroValido);
             //}while (esNumeroValido==false);
 
@@ -76,5 +82,18 @@ public class JuegoAdivinaNumero extends Juego implements Jugable {
             System.out.println("El numero introducido es incorrecto prueba con un numero del 0 al 10");
             return false;
         }
+    }
+
+    @Override
+    public void reiniciarPartida() {
+        super.reiniciarPartida();
+        boolean numeroCorrecto = false;
+
+        do{
+            this.numeroSecreto = random.nextInt(11);
+            //System.out.println(this.numeroSecreto);
+            numeroCorrecto = validaNumero(numeroSecreto);
+            //}while(numeroParCorrecto == false);
+        }while(!numeroCorrecto);
     }
 }

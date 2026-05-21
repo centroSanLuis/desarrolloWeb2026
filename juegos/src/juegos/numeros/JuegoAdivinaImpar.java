@@ -1,8 +1,8 @@
 package juegos.numeros;
 
 public class JuegoAdivinaImpar extends JuegoAdivinaNumero{
-    public JuegoAdivinaImpar(int numVidas, int numeroSecreto){
-        super(numVidas, numeroSecreto);
+    public JuegoAdivinaImpar(int numVidas){
+        super(numVidas);
     }
 
     @Override
@@ -24,7 +24,7 @@ public class JuegoAdivinaImpar extends JuegoAdivinaNumero{
             if(numero%2 != 0){
                 return true;
             }else{
-                System.out.println("El numero introducido debe ser IMPAR");
+                //System.out.println("El numero introducido debe ser IMPAR");
                 return false;
             }
         }else{

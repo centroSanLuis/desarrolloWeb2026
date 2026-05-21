@@ -1,6 +1,7 @@
 package main;
 
 import juegos.interfaces.Jugable;
+import juegos.letras.JuegoAhorcado;
 import juegos.numeros.JuegoAdivinaImpar;
 import juegos.numeros.JuegoAdivinaNumero;
 import juegos.numeros.JuegoAdivinaPar;
@@ -79,14 +80,16 @@ public class Main {
 
     public static Jugable eligeJuego(){
 
-        JuegoAdivinaNumero jan = new JuegoAdivinaNumero(5,5);
-        JuegoAdivinaPar jap = new JuegoAdivinaPar(5,6);
-        JuegoAdivinaImpar jai = new JuegoAdivinaImpar(5,3);
+        JuegoAdivinaNumero jan = new JuegoAdivinaNumero(5);
+        JuegoAdivinaPar jap = new JuegoAdivinaPar(5);
+        JuegoAdivinaImpar jai = new JuegoAdivinaImpar(5);
+        JuegoAhorcado jah = new JuegoAhorcado(5, "palabra");
 
-        Jugable[] juegos = new Jugable[3];
+        Jugable[] juegos = new Jugable[4];
         juegos[0] = jan;
         juegos[1] = jap;
         juegos[2] = jai;
+        juegos[3] = jah;
 
         boolean esJuegoCorrecto = false;
         Jugable respuesta = null;
