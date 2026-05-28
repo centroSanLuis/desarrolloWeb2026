@@ -1,5 +1,6 @@
 package main;
 
+import juegos.excepciones.JuegoException;
 import juegos.interfaces.Jugable;
 import juegos.letras.JuegoAhorcado;
 import juegos.numeros.JuegoAdivinaImpar;
@@ -14,25 +15,35 @@ public class Main {
 
     static void main() {
         boolean seguirJugando = false;
-        do {
-            Jugable juego = eligeJuego();
 
-            juego.muestraNombre();
-            juego.muestraInfo();
-            juego.juega();
+            try{
+                do {
+                    Jugable juego = eligeJuego();
+                    juego.muestraNombre();
+                    juego.muestraInfo();
+                    juego.juega();
 
-            System.out.println("¿Quieres seguir jugando? (s/n)");
-            teclado.nextLine();
-            String respuesta = teclado.nextLine();
+                    System.out.println("¿Quieres seguir jugando? (s/n)");
+                    teclado.nextLine();
+                    String respuesta = teclado.nextLine();
 
-            if(respuesta.equals("s")){
-                seguirJugando = true;
-            }else{
-                System.out.println("Gracias por jugar!");
+                    if(respuesta.equals("s")){
+                        seguirJugando = true;
+                    }else{
+                        System.out.println("Gracias por jugar!");
+                        seguirJugando = false;
+                    }
+                }while(seguirJugando);
+            } catch (JuegoException e) {
+                System.out.println(e.getMessage());
                 seguirJugando = false;
+            } finally {
+                System.out.println("Juego finalizado");
             }
 
-        }while(seguirJugando);
+
+
+
         /*
         //Crea una instancia de la clase Juego indicando que el número de vidas es 5.
         Juego juego = new Juego(5);
@@ -78,7 +89,7 @@ public class Main {
 
     }
 
-    public static Jugable eligeJuego(){
+    public static Jugable eligeJuego() throws JuegoException {
 
         JuegoAdivinaNumero jan = new JuegoAdivinaNumero(5);
         JuegoAdivinaPar jap = new JuegoAdivinaPar(5);
