@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
@@ -30,6 +31,10 @@ public class LoginController extends HttpServlet {
         UsuarioDTO usuarioLogueado = usuarioModel.login(usuario);
 
         if(usuarioLogueado != null){
+            /*HttpSession sesion = request.getSession();
+            sesion.setAttribute("user", usuarioLogueado);*/
+            request.getSession().setAttribute("user", usuarioLogueado);
+
             response.sendRedirect("index.jsp?nombre="+usuarioLogueado.getNombre()+"&apellido="+usuarioLogueado.getApellidos());
         }else{
             response.sendRedirect("login.jsp?error=true");
