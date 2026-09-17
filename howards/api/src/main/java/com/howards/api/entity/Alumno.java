@@ -6,6 +6,10 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data //genera los getter y setter ademas del equals, toString...
 @NoArgsConstructor //genera el constructor vacio (necesario para JPA)
@@ -28,4 +32,10 @@ public class Alumno {
     @JoinColumn(name="casas_id")
     @JsonIgnoreProperties({"alumnos", "hibernateLazyInitializer"})
     private Casa casa;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="habitaciones_id")
+    @JsonIgnoreProperties({"alumnos", "hibernateLazyInitializer"})
+    private Habitacion habitacion;
+
 }
