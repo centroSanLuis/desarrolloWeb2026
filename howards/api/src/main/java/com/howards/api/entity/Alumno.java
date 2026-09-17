@@ -1,5 +1,7 @@
 package com.howards.api.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,4 +23,9 @@ public class Alumno {
 
     @Column(name="ano_nacimiento")
     private int anoNacimiento;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="casas_id")
+    @JsonIgnoreProperties({"alumnos", "hibernateLazyInitializer"})
+    private Casa casa;
 }

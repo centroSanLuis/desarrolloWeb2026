@@ -14,7 +14,8 @@ public class AlumnoService {
     AlumnoRepository alumnoRepository;
 
     public List<Alumno> getAllAlumnos(){
-        return alumnoRepository.findAll();
+        List<Alumno> resultado = alumnoRepository.findAll();
+        return resultado;
     }
 
 }
