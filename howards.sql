@@ -39,6 +39,9 @@ PRIMARY KEY (`alumnos_id`,`materias_id`,curso),
 FOREIGN KEY (alumnos_id) REFERENCES alumnos(num_mago),
 FOREIGN KEY (materias_id) REFERENCES materias(id));
 
+ALTER TABLE `cursos`
+ADD COLUMN `nota` FLOAT;
+
 CREATE TABLE `profesores_materias`
 (`profesores_id` INT,
 `materias_id` INT,

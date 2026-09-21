@@ -68,25 +68,25 @@ INSERT INTO profesores_materias (curso, profesores_id, materias_id) VALUES
 (2023, 10, 10),-- Vector imparte Aritmancia (2023)
 (2023, 3, 4);  -- Flitwick imparte Encantamientos (2023)
 
-INSERT INTO cursos (Alumnos_ID, Materias_ID, Curso) VALUES 
+INSERT INTO cursos (Alumnos_ID, Materias_ID, Curso, nota) VALUES 
 -- Evaluaciones del año 2017
-(801, 1, 2017),  -- Harry Potter en DCAO
-(806, 1, 2017),  -- Draco Malfoy en DCAO
-(803, 2, 2017),  -- Hermione Granger en Pociones
+(801, 1, 2017, 8.0),  -- Harry Potter en DCAO
+(806, 1, 2017, 7.0),  -- Draco Malfoy en DCAO
+(803, 2, 2017, 9.5),  -- Hermione Granger en Pociones
 
 -- Evaluaciones del año 2022
-(803, 3, 2022),  -- Hermione Granger en Transformaciones
-(801, 3, 2022),  -- Harry Potter en Transformaciones
-(808, 4, 2022),  -- Luna Lovegood en Encantamientos
-(804, 5, 2022),  -- Neville Longbottom en Herbología
+(803, 3, 2022, 10.0),  -- Hermione Granger en Transformaciones
+(801, 3, 2022, 8.0),  -- Harry Potter en Transformaciones
+(808, 4, 2022, 7.0),  -- Luna Lovegood en Encantamientos
+(804, 5, 2022, 4.0),  -- Neville Longbottom en Herbología
 
 -- Evaluaciones del año 2023
-(801, 1, 2023), -- Harry Potter en DCAO
-(802, 1, 2023),  -- Ron Weasley en DCAO
-(803, 1, 2023),  -- Hermione Granger en DCAO
-(803, 2, 2023), -- Hermione Granger en Pociones
-(806, 2, 2023),  -- Draco Malfoy en Pociones
-(801, 8, 2023),  -- Harry Potter en Adivinación
-(801, 9, 2023),  -- Harry Potter en Criaturas Mágicas
-(803, 10, 2023),-- Hermione Granger en Aritmancia
-(810, 4, 2023);  -- Cedric Diggory en Encantamientos
+(801, 1, 2023, 6.0), -- Harry Potter en DCAO
+(802, 1, 2023, 5.0),  -- Ron Weasley en DCAO
+(803, 1, 2023, 9.0),  -- Hermione Granger en DCAO
+(803, 2, 2023, 10.0), -- Hermione Granger en Pociones
+(806, 2, 2023, 6.0),  -- Draco Malfoy en Pociones
+(801, 8, 2023, 5.5),  -- Harry Potter en Adivinación
+(801, 9, 2023, 8.5),  -- Harry Potter en Criaturas Mágicas
+(803, 10, 2023, 8.0),-- Hermione Granger en Aritmancia
+(810, 4, 2023, 9.5);  -- Cedric Diggory en Encantamientos
