@@ -2,6 +2,7 @@ package com.howards.api.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -37,5 +38,9 @@ public class Alumno {
     @JoinColumn(name="habitaciones_id")
     @JsonIgnoreProperties({"alumnos", "hibernateLazyInitializer"})
     private Habitacion habitacion;
+
+    @OneToMany(mappedBy = "alumno")
+    @JsonIgnoreProperties({"alumno", "id"})
+    private List<Curso> materias;
 
 }
