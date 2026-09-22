@@ -22,4 +22,8 @@ public class Casa {
     @OneToMany(mappedBy = "casa")
     @JsonIgnoreProperties("casa")
     private List<Alumno> alumnos;
+
+    @OneToOne
+    @JoinColumn(name="profesores_id")
+    private Profesor profesor;
 }
