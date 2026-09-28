@@ -26,4 +26,8 @@ public class GranCasa {
     @JsonIgnoreProperties("granCasa")
     private List<CasaVasalla> casasVasallas;
 
+    @OneToMany(mappedBy = "granCasa")
+    @JsonIgnoreProperties({"granCasa"})
+    private List<Recaudacion> recaudacionesObtenidas;
+
 }
