@@ -1,5 +1,6 @@
 package com.got.gestion.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.got.gestion.entity.enums.EstadoPago;
 import com.got.gestion.entity.ids.RecaudacionId;
@@ -19,11 +20,13 @@ public class Recaudacion {
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("granCasaId")
     @JoinColumn(name="grandes_casas_id")
+    @JsonIgnoreProperties("recaudacionesObtenidas")
     private GranCasa granCasa;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("maestreId")
     @JoinColumn(name="maestres_id")
+    @JsonIgnoreProperties("recaudacionesRealizadas")
     private Maestre maestre;
 
     private Integer importe;
