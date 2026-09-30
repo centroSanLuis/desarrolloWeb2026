@@ -1,0 +1,88 @@
+:root {
+    --bg-header: #8a4d44; /* El color rojizo de tu imagen */
+    --bg-base: #121212;
+    --text-white: #ffffff;
+    --text-gray: #b3b3b3;
+}
+
+body {
+    background-color: #000;
+    color: var(--text-white);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr 90px;
+    height: 100vh;
+}
+
+/* Header con gradiente */
+.album-header {
+    background: linear-gradient(to bottom, var(--bg-header), #121212);
+    padding: 60px 30px 20px;
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+}
+
+.album-cover {
+    width: 230px;
+    box-shadow: 0 4px 60px rgba(0,0,0,0.5);
+}
+
+.album-title {
+    font-size: 80px;
+    margin: 0;
+    font-weight: 900;
+}
+
+/* Tabla de canciones */
+.song-table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0 30px;
+    margin-top: 20px;
+}
+
+.song-table th {
+    text-align: left;
+    color: var(--text-gray);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 10px;
+}
+
+.song-row:hover {
+    background-color: rgba(255,255,255,0.1);
+    cursor: pointer;
+}
+
+.song-row td { padding: 10px; }
+
+/* Reproductor inferior */
+.player {
+    grid-column: span 2;
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.progress-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 500px;
+}
+
+#progress-bar {
+    flex-grow: 1;
+    accent-color: #1db954;
+}
+
+.artist-mini{
+    width: 32px;
+}

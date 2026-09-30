@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Spotify Clone - El Reno Renardo</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="nav-links">
+                <div class="library-header">Tu biblioteca <span class="plus">+</span></div>
+                <div class="pills">
+                    <button class="pill">Listas</button>
+                    <button class="pill">Artistas</button>
+                </div>
+            </div>
+            <div class="sidebar-list">
+                <div class="side-item active">
+                    <img src="https://path-to-album-art.jpg" alt="">
+                    <div>
+                        <p class="t1">Babuinos del Metal</p>
+                        <p class="t2">Álbum • El Reno Renardo</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-view">
+            <header class="album-header">
+                <img src="img/Cover_Babuinos.jpg" alt="Cover" class="album-cover">
+                <div class="album-details">
+                    <span>Álbum</span>
+                    <h1 class="album-title">Babuinos del Metal</h1>
+                    <div class="album-meta">
+                        <img src="img/Galleta.jpg" class="artist-mini">
+                        <strong>El Reno Renardo</strong> • 2013 • 16 canciones, 1 h 16 min
+                    </div>
+                </div>
+            </header>
+
+            <div class="action-bar">
+                <button class="play-main">▶</button>
+                <span class="icon">Shuffle</span>
+                <span class="icon">Like</span>
+                <span class="icon">Download</span>
+            </div>
+
+            <table class="song-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Título</th>
+                        <th><span class="clock">🕒</span></th>
+                    </tr>
+                </thead>
+                <tbody id="trackList">
+
+                </tbody>
+            </table>
+        </main>
+
+        <footer class="player">
+            <div class="now-playing">
+                <img src="https://i.scdn.co/image/ab67616d0000b27346869a8340d046f5c53b2781" id="current-cover">
+                <div class="info">
+                    <p id="current-title" data-id-cancion="-1">Selecciona una canción</p>
+                    <p id="current-artist">El Reno Renardo</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="player-btns">
+                    <button id="prev">⏮</button>
+                    <button id="play-pause" class="main-ctrl">▶</button>
+                    <button id="next">⏭</button>
+                </div>
+                <div class="progress-area">
+                    <span id="current-time">0:00</span>
+                    <input type="range" id="progress-bar" value="0" min="0" max="100">
+                    <span id="total-time">0:00</span>
+                </div>
+            </div>
+
+            <div class="volume-area">
+                <span id="emojiVolumen">🔊</span>
+                <input type="range" id="volume-control" min="0" max="100" value="50">
+            </div>
+        </footer>
+    </div>
+
+    <audio id="audio-player"></audio>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

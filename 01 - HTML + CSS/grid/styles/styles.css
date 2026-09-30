@@ -1,0 +1,41 @@
+body{
+    width: 600px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main{
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 80% auto;
+    grid-template-rows: 100px 50px auto 50px; 
+}
+
+div{
+    background-color: lightblue;
+    text-align: center;   
+}
+
+.cabecera{
+    grid-column: 1 / span 2;
+    background-color: antiquewhite;
+}
+
+.navegacion{
+    background-color: azure;
+    grid-column: 1 / span 2;
+}
+
+.main{
+background-color: cadetblue;
+}
+
+.sidebar{
+background-color: lightcoral;
+}
+
+.footer{
+background-color: lightpink;
+grid-column: 1 / span 2;
+}

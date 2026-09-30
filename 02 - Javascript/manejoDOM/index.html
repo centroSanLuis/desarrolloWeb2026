@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo DOM</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div>
+        <h2>El Saludador Personalizado</h2>
+        <input type="text" name="nombre" id="nombre" placeholder="Introduce tu nombre">
+        <button id="btnSaludar">Saluda!</button>
+        <span id="resultadoSaludo"></span>
+    </div>
+    <div>
+        <h2>El Interruptor de Luz</h2>
+        <div class="cuadrado" id="cuadrado"></div>
+        <button id="btnCambiarColor">Cambio!</button>
+    </div>
+    <div>
+        <h2>Contador de Clics</h2>
+        <button id="btnSumar">+1</button>
+        <p id="contador">0</p>
+    </div>
+    <div>
+        <h2>Cambiador de Estilo Dinámico</h2>
+        <p id="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti illum consequuntur a dolorem blanditiis eligendi perferendis molestiae! Rerum magni tempora ipsa sapiente eaque harum nesciunt magnam commodi, esse veniam iure.</p>
+        <button id="btnGrande">Grande</button>
+        <button id="btnAzul">Azul</button>
+        <button id="btnSubrayado">Subrayado</button>
+    </div>
+    <div>
+        <h2>Mostrar / Ocultar (Toggle)</h2>
+        <img id="imgLogo" src="img/sanluis.png" alt="Logo San Luis">
+        <button id="btnMostrarOcultarImg">Ocultar</button>
+    </div>
+    <div>
+        <h2>Lista de la Compra Simple</h2>
+        <input type="text" name="producto" id="producto">
+        <button id="btnAnadirProducto">Añadir</button>
+        <ul id="listaProductos"></ul>
+    </div>
+    <div>
+        <h2>El Validador de Formulario</h2>
+        <input type="text" name="pass" id="pass">
+        <p id="msjError"></p>
+    </div>
+    <div>
+        <h2>Galería de Imágenes</h2>
+        <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/001.png" alt="pokemones" id="imgCarrusel">
+        <div>
+            <button id="btnAnterior" disabled>Anterior</button>
+            <button id="btnSiguiente">Siguiente</button>
+        </div>
+    </div>
+    <div>
+        <h2>Generador de Colores Aleatorios</h2>
+        <button id="btnCambioColor">Cambiar color aleatorio</button>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Hora</th>
+                <th>Evento</th>
+                <th>Ponente</th>
+                <th>Sala</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2" class="hora">09:00 - 11:00</td>
+                <td>Introducci&oacute;n a CSS Grid</td>
+                <td>Ana Garc&iacute;a</td>
+                <td>Sala A</td>
+            </tr>
+            <tr>
+                <td>Taller FlexBox</td>
+                <td>Carlos Ruiz</td>
+                <td>Sala B</td>
+            </tr>
+            <tr>
+                <td class="hora">11:00 - 12:00</td>
+                <td colspan="3" class="descanso">Descanso y Networking</td>
+            </tr>
+            <tr>
+                <td class="hora">12:00 - 13:30</td>
+                <td>Masterclass React</td>
+                <td>Laura Peña</td>
+                <td>Auditorio</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,20 @@
+table#tabla1 tfoot{
+    background-color: aqua;
+}
+
+table#tabla2 tr:last-child{
+    background-color: aqua;
+}
+
+table#tabla1 tbody tr:nth-child(odd){
+    background-color: #ccc;
+}
+
+table#tabla2 tr:nth-child(odd){
+    background-color: #ccc;
+}
+
+table#tabla1 tbody tr:hover{
+    background-color: yellow;
+}
+
