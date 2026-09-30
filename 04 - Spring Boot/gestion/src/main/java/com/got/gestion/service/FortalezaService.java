@@ -5,6 +5,8 @@ import com.got.gestion.repository.FortalezaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class FortalezaService {
@@ -16,5 +18,9 @@ public class FortalezaService {
         f.setId(id);
 
         fortalezaRepository.delete(f);
+    }
+
+    public List<Fortaleza> obtenerFortalezasEnSobrecapacidad(){
+        return fortalezaRepository.obtenerFortalezasEnSobrecapacidad();
     }
 }

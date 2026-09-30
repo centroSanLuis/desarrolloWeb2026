@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/grandes-casas")
+@RequestMapping("/api/gran-casa")
 @AllArgsConstructor
 public class GranCasaController {
 

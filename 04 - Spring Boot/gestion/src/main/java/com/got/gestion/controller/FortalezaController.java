@@ -1,12 +1,12 @@
 package com.got.gestion.controller;
 
+import com.got.gestion.entity.Fortaleza;
 import com.got.gestion.service.FortalezaService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/fortaleza")
@@ -20,6 +20,17 @@ public class FortalezaController {
         fortalezaService.borrarFortaleza(id);
 
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/sobrecapacidad")
+    public ResponseEntity<List<Fortaleza>> obtenerFortalezasEnSobrecapacidad(){
+        List<Fortaleza> fortalezas = fortalezaService.obtenerFortalezasEnSobrecapacidad();
+
+        if(fortalezas.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }else{
+            return ResponseEntity.ok(fortalezas);
+        }
     }
 
 }
