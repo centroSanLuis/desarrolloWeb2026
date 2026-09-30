@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -19,5 +20,9 @@ public class GranCasaService {
 
     public List<GranCasaRepository.GranCasaResumen> obtenerGrandesCasasResumen(){
         return granCasaRepository.findAllBy();
+    }
+
+    public Optional<GranCasaRepository.GranCasaResumen> buscarPorNombre(String nombre){
+        return granCasaRepository.findByNombreIgnoreCase(nombre);
     }
 }
