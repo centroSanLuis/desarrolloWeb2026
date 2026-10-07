@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 @Component({
   imports: [],
@@ -6,4 +6,15 @@ import { Component } from '@angular/core';
   styleUrl: './tarjeta-usuario.css',
   templateUrl: './tarjeta-usuario.html',
 })
-export class TarjetaUsuario {}
+export class TarjetaUsuario {
+  nombre = input.required<string>();
+  profesion = input.required<string>();
+  avatarUrl = input.required<string>();
+
+  enLinea = true;
+
+  cambiarEstado(){
+    this.enLinea = !this.enLinea;
+  }
+
+}

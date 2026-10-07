@@ -1,1 +1,18 @@
-<p>tarjeta-usuario works!</p>
+
+
+<div class="card">
+    <img [src]="avatarUrl()" [alt]="nombre()" class="avatar">
+    <h2>{{ nombre() }}</h2>
+    <p class="rol">{{ profesion() }}</p>
+
+    <p class="estado">
+        Estado:
+        <span [class.disponible]="enLinea" [class.ocupado]="!enLinea">
+            {{ enLinea ? 'Disponible' : 'En reunión'}}
+        </span>
+    </p>
+
+    <button (click)="cambiarEstado()">
+        Cambiar a {{enLinea ? 'En reunión' : 'Disponible'}}
+    </button>
+</div>
