@@ -7,12 +7,12 @@
 
     <p class="estado">
         Estado:
-        <span [class.disponible]="enLinea" [class.ocupado]="!enLinea">
-            {{ enLinea ? 'Disponible' : 'En reunión'}}
+        <span [class.disponible]="enLinea()" [class.ocupado]="!enLinea()">
+            {{ enLinea() ? 'Disponible' : 'En reunión'}}
         </span>
     </p>
 
     <button (click)="cambiarEstado()">
-        Cambiar a {{enLinea ? 'En reunión' : 'Disponible'}}
+        Cambiar a {{enLinea() ? 'En reunión' : 'Disponible'}}
     </button>
 </div>

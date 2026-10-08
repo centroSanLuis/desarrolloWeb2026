@@ -11,10 +11,14 @@ export class TarjetaUsuario {
   profesion = input.required<string>();
   avatarUrl = input.required<string>();
 
-  enLinea = true;
+  enLinea = signal(true);
 
   cambiarEstado(){
-    this.enLinea = !this.enLinea;
+    this.enLinea.update(estadoActual => !estadoActual);
+
+    /*this.enLinea.update(function(estadoActual){
+      return !estadoActual;
+    });*/
   }
 
 }
