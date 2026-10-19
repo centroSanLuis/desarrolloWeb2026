@@ -1,0 +1,4 @@
+<div>
+    <p [class.finalizada]="tareaFinalizada()">{{nombre()}}</p>
+    <button [class.btn-finalizado]="tareaFinalizada()" (click)="cambiarEstado()">Tarea Realizada</button>
+</div>
