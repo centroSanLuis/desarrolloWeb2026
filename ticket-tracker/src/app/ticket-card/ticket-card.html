@@ -1,0 +1,30 @@
+<div class="card" [class.resuelto]="ticket().estado === 'Resuelto'">
+    <header>
+        <h4>
+            {{ticket().titulo | uppercase}}
+
+            @if (ticket().estado === 'Pendiente'){
+                <span class="badge pendiente">PENDIENTE</span>
+            }@else {
+                <span class="badge resuelto">RESUELTO</span>
+            }
+        </h4>
+    </header>
+
+    <p class="descripcion">{{ticket().descripcion}}</p>
+
+    <div class="info">
+        <span>Prioridad: <strong>{{ ticket().prioridad | titlecase}}</strong></span>
+        <span>Creado: <strong>{{ ticket().fechaCreacion | date:'mediumDate' }}</strong></span>
+    </div>
+
+    <div class="acciones">
+        <button class="btn-estado" (click)="onCambiarEstado()">
+            {{ticket().estado === 'Pendiente' ? 'Marcar Resuelto': 'Reabrir Ticket'}}
+        </button>
+        <button class="btn-eliminar" (click)="onEliminar()">
+            Eliminar
+        </button>
+    </div>
+
+</div>
