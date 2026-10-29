@@ -1,0 +1,35 @@
+.personaje{
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #7272d7;
+    color: #ececec;
+    margin: 5px;
+}
+
+.personaje img{
+    width: 95px;
+    margin-right: 10px;
+}
+
+.personaje h2{
+    font-size: 0.8em;
+}
+
+.personaje .info{
+    padding: 5px;
+    font-weight: 900;
+}
+
+.personaje p{
+    font-size: 0.6em;
+    margin: 10px 0;
+}
+
+.info .alive{
+    color: #008139;
+}
+
+.info .dead{
+    color: #820B00;
+}

@@ -1,0 +1,22 @@
+.personajes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.personaje{
+    width: 25%;
+}
+
+.paginacion{
+    display: flex;
+    justify-content: space-between;
+}
+
+.paginacion div{
+    width: 50%;
+}
+
+.paginacion .siguiente{
+    text-align: right;
+}

@@ -1,0 +1,9 @@
+<div class="personaje">
+    <img [src]="personaje()?.image" [alt]="personaje()?.name">
+    <div class="info">
+        <h2>{{personaje()?.name}}</h2>
+        <p>{{personaje()?.species}}</p>
+        <p [class]="personaje()?.status | lowercase">{{personaje()?.status | uppercase}}</p>
+    </div>
+</div>
+

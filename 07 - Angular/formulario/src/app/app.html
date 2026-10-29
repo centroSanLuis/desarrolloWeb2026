@@ -1,0 +1,7 @@
+<form [formGroup]="form" (ngSubmit)="enviar()">
+  <input type="text" formControlName="nombre" placeholder="Nombre">
+  <input type="text" formControlName="email" placeholder="Email">
+  <input type="number" formControlName="edad">
+
+  <button [disabled]="form.invalid">Enviar</button>
+</form>

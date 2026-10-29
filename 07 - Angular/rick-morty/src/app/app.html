@@ -1,0 +1,20 @@
+
+
+
+<div class="personajes">
+  @for (p of personajes(); track p.id) {
+    <app-personaje-component class="personaje" [personaje]="p"></app-personaje-component>
+  }
+</div>
+<div class="paginacion">
+  <div>
+  @if (info()?.prev) {
+    <button (click)="anterior()"> << Anterior </button>
+  }
+  </div>
+  <div class="siguiente">
+  @if (info()?.next) {
+    <button (click)="siguiente()"> Siguiente >> </button>
+  }
+  </div>
+</div>
